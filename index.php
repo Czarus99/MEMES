@@ -10,7 +10,7 @@
         $page = 1;
         $limit = 10;
         $offset = ($page * $limit) -$limit;
-        $q="SELECT id, file FROM memesw offset $offset limit $limit";
+        $q="SELECT id, file FROM memes limit $limit offset $offset ";
             
             ?>
     <body>
@@ -21,28 +21,21 @@
         
         <?php
         if ($wynik=$con->query($q)) {
-        while ($row-$wynik->fetch_array()) {
+        while ($row=$wynik->fetch_array()) {
             echo '        
         <div class="przerwa">
             <p class="data">DATA</p>
             <h3>Tytuł:</h3>
         </div>
         <div class="mem">
-            <img src="Featured-Dying-Light-2-how-to-get-honey.jpg" width="100%" height="100%">
+            <img src="'.$row['file'].'">
         </div>
-        '
+        ';
         }    
         } else {
             echo $con->errno . "" . $con->error;
         }
         ?>
-        <div class="przerwa">
-            <p class="data">DATA</p>
-            <h3>Tytuł:</h3>
-        </div>
-        <div class="mem">
-            <img src="Featured-Dying-Light-2-how-to-get-honey.jpg" width="100%" height="100%">
-        </div>
             <br>
             <br>
         <div class="koncowa">
