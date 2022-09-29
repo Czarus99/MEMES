@@ -1,0 +1,2 @@
+INSERT INTO users (id values (1, Czarus, c7a00989742222cdaf9579ab6eb6dddc, szkolnyczarus@gmail.com, 1)
+INSERT INTO users values (2, Remus, dfd7afa87e3d4fdfecdaed6c33bb37ce, infajestspokochyba@gmail.com, 0)
